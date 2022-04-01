@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700;900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+
+}
+.container-primary {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.left-info {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.left-info > h1 {
+    color: #fff;
+    font-size: 2.5vw;
+    font-family: "Poppins", sans-serif;
+
+}
+.left-info > img {
+    width: 33vw;
+}
+.right-info {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.card-login {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 35px;
+    background-color: #1c5e27;
+    border-radius: 20px;
+}
+
+.card-login > h1 {
+    color: #fff;
+    font-weight: 600;
+    margin: 0;
+}
+.form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.input-control {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: #fff;
+    margin: 10px 0px;
+}
+
+.input-control  > input {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    outline: none;
+    color: #fff;
+    font-size: 12pt;
+    background-color: #608e68;
+    box-sizing: border-box;
+}
+
+.input-control  > label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.input-control > input::placeholder {
+    color: #fff;
+    font-size: 12pt;
+    font-family: "Lato", sans-serif;
+}
+  
+.btn-login {
+    width: 100%;
+    color: #fff;
+    margin: 25px;
+    padding: 16px 0px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border: 2px solid #608e68;
+    background-color: #608e68;
+    box-sizing: 0px 10px 40px -12px;
+    transition: transform 0.5s;
+}
+
+.btn-login > a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-login:hover {
+    transform: scale(1.08);
+}
+a {
+    color: #fff;
+    text-decoration: none;  
+}
+  
