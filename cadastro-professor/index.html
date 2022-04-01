@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Boletim Online</title>
+</head>
+
+<body>
+    <div class="container-primary">
+        <div class="left-info">
+            <h1>Olá Professor <br> gerencie as notas de seus alunos.</h1>
+            <img src="../assets/IFCE-removebg-preview.png" alt="Imagem para ilustrar">
+        </div>
+        <div class="right-info">
+            <div class="card-cadastro">
+                <h1>Cadastrar</h1>
+                <form class="form" method="post">
+                    <div class="input-control">
+                        <label for="matricula_professor">Código de Matricula do Professor</label>
+                        <input type="text" name="matricula_professor" placeholder="Número da Matricula">
+                    </div>
+                    <div class="input-control">
+                        <label for="email">Email do Professor</label>
+                        <input type="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="input-control">
+                        <label for="materia">Matéria a Ser Dada</label>
+                        <input type="text" name="materia" placeholder="Matéria">
+                    </div>
+                    <div class="input-control">
+                        <label for="senha">Senha de acesso Professor</label>
+                        <input type="password" name="senha" placeholder="Senha">
+                    </div>
+                    <div class="input-control">
+                        <label for="confiSenha">Confirme sua senha</label>
+                        <input type="password" name="confiSenha" placeholder="Repetir senha">
+                    </div>
+                    <input type="submit" class="btn-cadastro" value="Cadastrar" />
+                    <a href="../login-professor/index.html" class="btn-login">Já tem uma conta?</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
