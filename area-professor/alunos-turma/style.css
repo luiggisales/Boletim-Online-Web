@@ -7,16 +7,26 @@
     font-family: 'Poppins', sans-serif;
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+    max-width: 100vw;
+    height: 100vh;
 }
 
 main.cards {
-    display: flex;
-    padding: 32px;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    grid-auto-rows: auto;
+    gap: 15px;
+    font-family: sans-serif;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
 
+main.cards * {
+    box-sizing: border-box;
 }
 
 main.cards section.card {
@@ -24,25 +34,23 @@ main.cards section.card {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 100%;
     padding: 1rem 1.5rem;
     border-radius: 8px;
     max-height: 468px;
-    margin-left: 32px;
-    box-shadow: 0px 4px 8px rgb(197, 195, 195);
+    margin-left: 16px;
+    box-shadow: 0px 4px 8px rgb(133, 130, 130);
 }
 
-
-main.cards section.card:first-child {
-    margin-left: 0;
-}
 
 main.cards section.card .icon {
-    width: 64px;
-    height: 64px;
+    width: 90px;
+    height: 90px;
 }
 
 main.cards section.card img {
     width: 100%;
+    border-radius: 64px;
 }
 
 main.cards section.card h3 {
@@ -50,9 +58,12 @@ main.cards section.card h3 {
     margin: 16px 0;
 }
 
-main.cards section.card span {
-    font-weight: 300;
+main.cards section.card p {
+    font-weight: 500;
+    width: 100%;
     max-width: 100%;
+    font-size: 0.8rem;
+    text-align: left;
 }
 
 .info {
@@ -65,13 +76,6 @@ main.cards section.card span {
     align-items: flex-start;
     justify-content: center;
     box-shadow: 0px 4px 8px rgb(197, 195, 195);
-}
-
-.desc {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: center;
 }
 
 @media only screen and (max-width: 764px) {
