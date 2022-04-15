@@ -142,3 +142,30 @@ a {
 .btn-cadastro {
     font-size: 14px;
 }
+
+@media only screen and (max-width: 950px) {
+    .card-login {
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container-primary {
+        flex-direction: column;
+    }
+
+    .left-info h1 {
+        display: none;
+    }
+
+    .left-info,
+    .right-info {
+        width: 100%;
+        height: auto;
+    }
+
+    .left-info>img {
+        width: 50vw;
+        margin-bottom: 10px;
+    }
+}

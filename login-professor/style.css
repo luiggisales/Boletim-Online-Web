@@ -1,15 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700;900&display=swap");
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     width: 100vw;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
 
 }
+
 .container-primary {
     display: flex;
     flex-direction: row;
@@ -17,6 +20,7 @@ body {
     justify-content: center;
     box-sizing: border-box;
 }
+
 .left-info {
     width: 50vw;
     height: 100vh;
@@ -25,15 +29,18 @@ body {
     align-items: center;
     justify-content: center;
 }
-.left-info > h1 {
+
+.left-info>h1 {
     color: #000;
     font-size: 2.1vw;
     font-family: "Poppins", sans-serif;
 
 }
-.left-info > img {
+
+.left-info>img {
     width: 33vw;
 }
+
 .right-info {
     width: 50vw;
     height: 100vh;
@@ -42,6 +49,7 @@ body {
     justify-content: center;
 
 }
+
 .card-login {
     width: 50%;
     display: flex;
@@ -53,11 +61,12 @@ body {
     border-radius: 20px;
 }
 
-.card-login > h1 {
+.card-login>h1 {
     color: #fff;
     font-weight: 600;
     margin: 0;
 }
+
 .form {
     width: 100%;
     display: flex;
@@ -76,7 +85,7 @@ body {
     margin: 10px 0px;
 }
 
-.input-control  > input {
+.input-control>input {
     width: 100%;
     border: none;
     border-radius: 10px;
@@ -88,17 +97,17 @@ body {
     box-sizing: border-box;
 }
 
-.input-control  > label {
+.input-control>label {
     font-weight: 600;
     margin-bottom: 5px;
 }
 
-.input-control > input::placeholder {
+.input-control>input::placeholder {
     color: #fff;
     font-size: 12pt;
     font-family: "Lato", sans-serif;
 }
-  
+
 .btn-login {
     width: 100%;
     color: #fff;
@@ -115,7 +124,8 @@ body {
     box-sizing: 0px 10px 40px -12px;
     transition: transform 0.5s;
 }
-.btn-login > a {
+
+.btn-login>a {
     color: #fff;
     text-decoration: none;
 }
@@ -123,8 +133,36 @@ body {
 .btn-login:hover {
     transform: scale(1.08);
 }
+
 a {
     color: #fff;
-    text-decoration: none;  
+    text-decoration: none;
 }
-  
+
+
+@media only screen and (max-width: 950px) {
+    .card-login {
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container-primary {
+        flex-direction: column;
+    }
+
+    .left-info h1 {
+        display: none;
+    }
+
+    .left-info,
+    .right-info {
+        width: 100%;
+        height: auto;
+    }
+
+    .left-info>img {
+        width: 50vw;
+        margin-bottom: 10px;
+    }
+}
