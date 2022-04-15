@@ -12,37 +12,28 @@
 
 <body>
     <header>
-        <nav class="nav-bar">
-            <div class="logo">
+        <nav class="navbar">
+            <a href="../index.html" class="logo">
                 <h1>Boletim Online</h1>
-            </div>
-            <div class="nav-list">
-                <ul>
-                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./index.html">Turma</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Cadastrar Notas</a></li>
-                </ul>
-            </div>
-            <div class="btn-sair">
-                <button><a href="../../login-professor/index.html">Sair</a></button>
-            </div>
+            </a>
 
-            <div class="mobile-menu-icon">
-                <button onclick="menuShow()">
-                    <img src="../assets/menu_white_36dp.svg" alt="abrir menu" class="icon">
-                </button>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="./index.html" class="nav-link">Turma</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Cadastrar Notas</a></li>
+                <li class="nav-item">
+                    <div class="btn-sair">
+                        <button><a href="../../login-professor/index.html">Sair</a></button>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </nav>
-        <div class="mobile-menu">
-            <ul>
-                <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="./index.html">Turma</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Cadastrar Notas</a></li>
-            </ul>
-            <div class="btn-sair">
-                <button><a href="../../login-professor/index.html">Sair</a></button>
-            </div>
-        </div>
     </header>
     <section class="info">
         <span>CREDE: CREDE 1</span>
@@ -50,7 +41,6 @@
         <span>TURMA: 3ª Série | Ensino Médio | Regular | Manhã B</span>
         <span>ANO LETIVO: 2022</span>
     </section>
-
     <main class="cards">
         <section class="card">
             <div class="icon">
