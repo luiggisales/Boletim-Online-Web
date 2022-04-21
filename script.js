@@ -21,10 +21,10 @@ function LoginProfessor(event) {
 
   if (matricula_professor == "" && senha == "" || matricula_professor == null && senha == null) {
     alert("Dados corretos");
-    window.location.href = "area-professor/alunos-turma/index.html";
+    window.location.href = "./area-professor/index.html";
   } else {
     //alert("Dados incorretos, tente novamente");
     alert("Dados corretos");
-    window.location.href = "area-professor/alunos-turma/index.html";
+    window.location.href = "./area-professor/index.html";
   }
 }
