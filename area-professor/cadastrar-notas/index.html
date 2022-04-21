@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../menu-response.css">
+    <link rel="stylesheet" href="../alunos-turma/style.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Boletim Online</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../alunos-turma/index.html" class="logo">
+                <h1>Boletim Online</h1>
+            </a>
+
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../alunos-turma/index.html" class="nav-link">Turma</a></li>
+                <li class="nav-item"><a href="./index.html" class="nav-link">Cadastrar Notas</a></li>
+                <li class="nav-item">
+                    <div class="btn-sair">
+                        <button><a href="../../index.html">Sair</a></button>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <section class="info">
+        <span>CREDE: CREDE 1</span>
+        <span>ESCOLA: IFCE CAMPUS MARANGUAPE</span>
+        <span>TURMA: 3ª Série | Ensino Médio | Regular | Manhã B</span>
+        <span>ANO LETIVO: 2022</span>
+    </section>
+    <main>
+        <div class="container">
+            <div class="card-form">
+                <form class="form" method="post">
+                    <div class="input-control">
+                        <label for="nomeAluno">Nome do Aluno</label>
+                        <input type="text" placeholder="Nome" name="nomeAluno">
+                    </div>
+                    <div class="input-control">
+                        <label for="materia">Matéria</label>
+                        <div class="select">
+                            <select name="materia" id="materia">
+                                <option value="default">Nenhuma</option>
+                                <option value="biologia">Biologia</option>
+                                <option value="edFisica">Educação Física</option>
+                                <option value="filosofia">Filosofia</option>
+                                <option value="fisica">Física</option>
+                                <option value="geografia">Geografia</option>
+                                <option value="historia">História</option>
+                                <option value="ingles">Ingles</option>
+                                <option value="matematica1">Matemática 1</option>
+                                <option value="matematica2">Matemática 2</option>
+                                <option value="portugues1">Portuguẽs 1</option>
+                                <option value="portugues2">Portuguẽs 2</option>
+                                <option value="quimica">Química</option>
+                                <option value="redacao">Redação</option>
+                                <option value="sociologia">Sociologia</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-control">
+                        <label for="avParcial">Nota da Avaliação Parcial</label>
+                        <input type="text" placeholder="Nota" name="avParcial">
+                    </div>
+                    <input type="button" value="Enviar" class="btn-enviar">
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="../../mobile-navbar.js"></script>
+</body>
+
+</html>
