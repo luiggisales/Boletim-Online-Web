@@ -5,7 +5,7 @@ function Login(event) {
 
   if (matricula == "" && senha == "" || matricula == null && senha == null) {
     alert("Dados corretos");
-    window.location.href = "./area-estudante/index.html";
+    window.location.href = "../area-estudante/index.html";
   } else {
     alert("Dados incorretos, tente novamente");
   }
@@ -19,7 +19,7 @@ function LoginProfessor(event) {
 
   if (matricula_professor == "" && senha == "" || matricula_professor == null && senha == null) {
     alert("Dados corretos");
-    window.location.href = "../area-professor/index.html";
+    window.location.href = "../area-professor/alunos-turma/index.html";
   } else {
     alert("Dados incorretos, tente novamente");
   }
