@@ -6,23 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../menu-response.css">
     <title>Boletim Online</title>
 </head>
 
 <body>
     <header>
-        <div class="title">
-            <h1>Boletim Online</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="./index.html">Boletim</a></li>
-                <li><a href="../horários/index.html">Horários</a></li>
-                <li><a href="../avaliações-online/index.html">Avaliações Online</a></li>
+        <nav class="navbar">
+            <a href="../index.html" class="logo">
+                <h1>Boletim Online</h1>
+            </a>
+
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="./index.html" class="nav-link">Boletim</a></li>
+                <li class="nav-item"><a href="../horários/index.html" class="nav-link">Horários</a></li>
+                <li class="nav-item"><a href="../avaliações-online/index.html" class="nav-link">Avaliações Online</a>
+                <li class="nav-item">
+                    <div class="btn-sair">
+                        <button><a href="../../login-aluno/index.html">Sair</a></button>
+                    </div>
+                </li>
             </ul>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </nav>
-        <button><a href="../../login-aluno/index.html">Sair</a></button>
     </header>
 
     <main>
@@ -417,6 +428,7 @@
     <footer>
         <p>Desenvolvido por Luiggi Sales</p>
     </footer>
+    <script src="../../mobile-navbar.js"></script>
 </body>
 
 </html>
