@@ -5,186 +5,209 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../menu-response.css">
-    <link rel="stylesheet" href="./style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <!--Menu Horizontal-->
+    <link rel="stylesheet" href="../../menu-horizontal.css">
+    <!--@@@@@@@@@@@@@@@@@@@@@@@-->
+    <!--Menu Vertical-->
+    <!--link rel="stylesheet" href="../../menu-vetical.css"-->
+    <link rel="stylesheet" href="style.css">
     <title>Boletim Online</title>
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-            <a href="../index.html" class="logo">
-                <h1>Boletim Online</h1>
-            </a>
+    <nav class="sidebar navbar">
+        <header class="logo">
+            <div class="text logo-text ">
+                <h1 class="name">Boletim Online</h1>
+            </div>
 
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="../index.html" class="nav-link">Inicio</a></li>
-                <li class="nav-item"><a href="./index.html" class="nav-link">Turma</a></li>
-                <li class="nav-item"><a href="../cadastrar-notas/index.html" class="nav-link">Cadastrar Notas</a></li>
-                <li class="nav-item">
-                    <div class="btn-sair">
-                        <button><a href="../../index.html">Sair</a></button>
-                    </div>
-                </li>
-            </ul>
-
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+        <div class="menu-bar">
+            <div class="menu navbar">
+                <ul class="menu-links nav-menu">
+                    <li class="nav-links nav-item">
+                        <a href="../index.html" class="nav-link">
+                            <span class="text nav-text">Inicio</span>
+                        </a>
+                    </li>
+                    <li class="nav-links nav-item">
+                        <a href="./index.html" class="nav-link">
+                            <span class="text nav-text">Turma</span>
+                        </a>
+                    </li>
+                    <li class="nav-links nav-item">
+                        <a href="../cadastrar-notas/index.html" class="nav-link">
+                            <span class="text nav-text">Cadastrar</span>
+                        </a>
+                    </li>
+                    <li class="nav-links nav-item">
+                        <a href="../../index.html" class="nav-link-button">
+                            <span class="text nav-text">Sair</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
-        </nav>
-    </header>
-    <section class="info">
-        <span>CREDE: CREDE 1</span>
-        <span>ESCOLA: IFCE CAMPUS MARANGUAPE</span>
-        <span>TURMA: 3ª Série | Ensino Médio | Regular | Manhã B</span>
-        <span>ANO LETIVO: 2022</span>
-    </section>
-    <main class="cards">
-        <section class="card">
-            <div class="icon">
-                <img src="../../assets/aluno.jpg" alt="Aluno da turma">
-            </div>
-            <h3>Luiggi Sales</h3>
-            <div class="desc">
-                <p>Email: luiggisales@hg.com</p>
-                <p>Turno: Manhã</p>
-                <p>Ano Letivo: 2022</p>
-            </div>
+        </div>
+    </nav>
+    <main class="home">
+        <section class="info">
+            <span>CREDE: CREDE 1</span>
+            <span>ESCOLA: IFCE CAMPUS MARANGUAPE</span>
+            <span>TURMA: 3ª Série | Ensino Médio | Regular | Manhã B</span>
+            <span>ANO LETIVO: 2022</span>
         </section>
+        <div class="cards">
+            <section class="card">
+                <div class="icon">
+                    <img src="../../assets/aluno.jpg" alt="Aluno da turma">
+                </div>
+                <h3>Luiggi Sales</h3>
+                <div class="desc">
+                    <p>Email: luiggisales@hg.com</p>
+                    <p>Turno: Manhã</p>
+                    <p>Ano Letivo: 2022</p>
+                </div>
+            </section>
 
-        <section class="card">
-            <div class="icon">
-                <img src="../../assets/aluno.jpg" alt="Aluno da turma">
-            </div>
-            <h3>Rodrigo da Silva</h3>
-            <div class="desc">
-                <p>Email: rock@hg.com</p>
-                <p>Turno: Manhã</p>
-                <p>Ano Letivo: 2022</p>
-            </div>
-        </section>
+            <section class="card">
+                <div class="icon">
+                    <img src="../../assets/aluno.jpg" alt="Aluno da turma">
+                </div>
+                <h3>Rodrigo da Silva</h3>
+                <div class="desc">
+                    <p>Email: rock@hg.com</p>
+                    <p>Turno: Manhã</p>
+                    <p>Ano Letivo: 2022</p>
+                </div>
+            </section>
 
-        <section class="card">
-            <div class="icon">
-                <img src="../../assets/aluno.jpg" alt="Aluno da turma">
-            </div>
-            <h3>Arlindo Magalhães</h3>
-            <div class="desc">
-                <p>Email: luiggisales@hg.com</p>
-                <p>Turno: Manhã</p>
-                <p>Ano Letivo: 2022</p>
-            </div>
-        </section>
+            <section class="card">
+                <div class="icon">
+                    <img src="../../assets/aluno.jpg" alt="Aluno da turma">
+                </div>
+                <h3>Arlindo Magalhães</h3>
+                <div class="desc">
+                    <p>Email: luiggisales@hg.com</p>
+                    <p>Turno: Manhã</p>
+                    <p>Ano Letivo: 2022</p>
+                </div>
+            </section>
 
-        <section class="card">
-            <div class="icon">
-                <img src="../../assets/aluno.jpg" alt="Aluno da turma">
-            </div>
-            <h3>Samuel de Paula</h3>
-            <div class="desc">
-                <p>Email: sam@hg.com</p>
-                <p>Turno: Manhã</p>
-                <p>Ano Letivo: 2022</p>
-            </div>
-        </section>
+            <section class="card">
+                <div class="icon">
+                    <img src="../../assets/aluno.jpg" alt="Aluno da turma">
+                </div>
+                <h3>Samuel de Paula</h3>
+                <div class="desc">
+                    <p>Email: sam@hg.com</p>
+                    <p>Turno: Manhã</p>
+                    <p>Ano Letivo: 2022</p>
+                </div>
+            </section>
 
-        <section class="card">
-            <div class="icon">
-                <img src="../../assets/aluno.jpg" alt="Aluno da turma">
-            </div>
-            <h3>Larissa Sales</h3>
-            <div class="desc">
-                <p>Email: lari156@hg.com</p>
-                <p>Turno: Manhã</p>
-                <p>Ano Letivo: 2022</p>
-            </div>
-        </section>
+            <section class="card">
+                <div class="icon">
+                    <img src="../../assets/aluno.jpg" alt="Aluno da turma">
+                </div>
+                <h3>Larissa Sales</h3>
+                <div class="desc">
+                    <p>Email: lari156@hg.com</p>
+                    <p>Turno: Manhã</p>
+                    <p>Ano Letivo: 2022</p>
+                </div>
+            </section>
 
-        <section class="card">
-            <div class="icon">
-                <img src="../../assets/aluno.jpg" alt="Aluno da turma">
-            </div>
-            <h3>Larissa Sales</h3>
-            <div class="desc">
-                <p>Email: lari1568@hg.com</p>
-                <p>Turno: Manhã</p>
-                <p>Ano Letivo: 2022</p>
-            </div>
-        </section>
+            <section class="card">
+                <div class="icon">
+                    <img src="../../assets/aluno.jpg" alt="Aluno da turma">
+                </div>
+                <h3>Larissa Sales</h3>
+                <div class="desc">
+                    <p>Email: lari1568@hg.com</p>
+                    <p>Turno: Manhã</p>
+                    <p>Ano Letivo: 2022</p>
+                </div>
+            </section>
 
-        <section class="card">
-            <div class="icon">
-                <img src="../../assets/aluno.jpg" alt="Aluno da turma">
-            </div>
-            <h3>Leticia Sales</h3>
-            <div class="desc">
-                <p>Email: leti005@hg.com</p>
-                <p>Turno: Manhã</p>
-                <p>Ano Letivo: 2022</p>
-            </div>
-        </section>
+            <section class="card">
+                <div class="icon">
+                    <img src="../../assets/aluno.jpg" alt="Aluno da turma">
+                </div>
+                <h3>Leticia Sales</h3>
+                <div class="desc">
+                    <p>Email: leti005@hg.com</p>
+                    <p>Turno: Manhã</p>
+                    <p>Ano Letivo: 2022</p>
+                </div>
+            </section>
 
-        <section class="card">
-            <div class="icon">
-                <img src="../../assets/aluno.jpg" alt="Aluno da turma">
-            </div>
-            <h3>Renato Arrais</h3>
-            <div class="desc">
-                <p>Email: renato156@hg.com</p>
-                <p>Turno: Manhã</p>
-                <p>Ano Letivo: 2022</p>
-            </div>
-        </section>
+            <section class="card">
+                <div class="icon">
+                    <img src="../../assets/aluno.jpg" alt="Aluno da turma">
+                </div>
+                <h3>Renato Arrais</h3>
+                <div class="desc">
+                    <p>Email: renato156@hg.com</p>
+                    <p>Turno: Manhã</p>
+                    <p>Ano Letivo: 2022</p>
+                </div>
+            </section>
 
-        <section class="card">
-            <div class="icon">
-                <img src="../../assets/aluno.jpg" alt="Aluno da turma">
-            </div>
-            <h3>Larissa Gomes</h3>
-            <div class="desc">
-                <p>Email: gomessilva@hg.com</p>
-                <p>Turno: Manhã</p>
-                <p>Ano Letivo: 2022</p>
-            </div>
-        </section>
+            <section class="card">
+                <div class="icon">
+                    <img src="../../assets/aluno.jpg" alt="Aluno da turma">
+                </div>
+                <h3>Larissa Gomes</h3>
+                <div class="desc">
+                    <p>Email: gomessilva@hg.com</p>
+                    <p>Turno: Manhã</p>
+                    <p>Ano Letivo: 2022</p>
+                </div>
+            </section>
 
-        <section class="card">
-            <div class="icon">
-                <img src="../../assets/aluno.jpg" alt="Aluno da turma">
-            </div>
-            <h3>Maria Tainá</h3>
-            <div class="desc">
-                <p>Email: taina@hg.com</p>
-                <p>Turno: Manhã</p>
-                <p>Ano Letivo: 2022</p>
-            </div>
-        </section>
+            <section class="card">
+                <div class="icon">
+                    <img src="../../assets/aluno.jpg" alt="Aluno da turma">
+                </div>
+                <h3>Maria Tainá</h3>
+                <div class="desc">
+                    <p>Email: taina@hg.com</p>
+                    <p>Turno: Manhã</p>
+                    <p>Ano Letivo: 2022</p>
+                </div>
+            </section>
 
-        <section class="card">
-            <div class="icon">
-                <img src="../../assets/aluno.jpg" alt="Aluno da turma">
-            </div>
-            <h3>Raul Victor</h3>
-            <div class="desc">
-                <p>Email: rvictor@hg.com</p>
-                <p>Turno: Manhã</p>
-                <p>Ano Letivo: 2022</p>
-            </div>
-        </section>
+            <section class="card">
+                <div class="icon">
+                    <img src="../../assets/aluno.jpg" alt="Aluno da turma">
+                </div>
+                <h3>Raul Victor</h3>
+                <div class="desc">
+                    <p>Email: rvictor@hg.com</p>
+                    <p>Turno: Manhã</p>
+                    <p>Ano Letivo: 2022</p>
+                </div>
+            </section>
 
-        <section class="card">
-            <div class="icon">
-                <img src="../../assets/aluno.jpg" alt="Aluno da turma">
-            </div>
-            <h3>Renan Arrais</h3>
-            <div class="desc">
-                <p>Email: arrais18@hg.com</p>
-                <p>Turno: Manhã</p>
-                <p>Ano Letivo: 2022</p>
-            </div>
-        </section>
+            <section class="card">
+                <div class="icon">
+                    <img src="../../assets/aluno.jpg" alt="Aluno da turma">
+                </div>
+                <h3>Renan Arrais</h3>
+                <div class="desc">
+                    <p>Email: arrais18@hg.com</p>
+                    <p>Turno: Manhã</p>
+                    <p>Ano Letivo: 2022</p>
+                </div>
+            </section>
+        </div>
     </main>
     <script src="../../mobile-navbar.js"></script>
 </body>

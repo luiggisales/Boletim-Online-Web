@@ -1,15 +1,3 @@
-function menuShow() {
-    let menuMobile = document.querySelector('.mobile-menu');
-    if (menuMobile.classList.contains('open')) {
-        menuMobile.classList.remove('open')
-        document.querySelector('.icon').src = "../../assets/menu_white_36dp.svg";
-    } else {
-        menuMobile.classList.add('open')
-        document.querySelector('.icon').src = "../../assets/close_white_36dp.svg";
-    }
-}
-
-
 function openMenu() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
@@ -21,3 +9,30 @@ function openMenu() {
 }
 
 openMenu()
+
+const body = document.querySelector('body'),
+    sidebar = body.querySelector('nav'),
+    toggle = body.querySelector(".toggle"),
+    searchBtn = body.querySelector(".search-box"),
+    modeSwitch = body.querySelector(".toggle-switch"),
+    modeText = body.querySelector(".mode-text");
+
+
+toggle.addEventListener("click", () => {
+    sidebar.classList.toggle("close");
+})
+
+searchBtn.addEventListener("click", () => {
+    sidebar.classList.remove("close");
+})
+
+modeSwitch.addEventListener("click", () => {
+    body.classList.toggle("dark");
+
+    if (body.classList.contains("dark")) {
+        modeText.innerText = "Light mode";
+    } else {
+        modeText.innerText = "Dark mode";
+
+    }
+});
