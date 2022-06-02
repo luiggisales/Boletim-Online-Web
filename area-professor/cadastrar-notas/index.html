@@ -38,8 +38,13 @@
                         </a>
                     </li>
                     <li class="nav-links nav-item">
-                        <a href="./index.html class=" nav-link">
+                        <a href="./index.html" class="nav-link">
                             <span class="text nav-text">Cadastrar</span>
+                        </a>
+                    </li>
+                    <li class="nav-links nav-item">
+                        <a href="../historico-cadastro/index.html" class="nav-link">
+                            <span class="text nav-text">Historico</span>
                         </a>
                     </li>
                     <li class="nav-links nav-item">
@@ -65,7 +70,7 @@
         </section>
         <div class="container">
             <div class="card-form">
-                <form class="form" method="post">
+                <form class="form" method="post" id="form">
                     <div class="input-control">
                         <label for="nomeAluno">Nome do Aluno</label>
                         <input type="text" placeholder="Nome" name="nomeAluno">
@@ -73,7 +78,7 @@
                     <div class="input-control">
                         <label for="materia">Matéria</label>
                         <div class="select">
-                            <select name="materia" id="materia">
+                            <select name="materia" >
                                 <option value="default">Nenhuma</option>
                                 <option value="biologia">Biologia</option>
                                 <option value="edFisica">Educação Física</option>
@@ -96,12 +101,13 @@
                         <label for="avParcial">Nota da Avaliação Parcial</label>
                         <input type="text" placeholder="Nota" name="avParcial">
                     </div>
-                    <input type="button" value="Enviar" class="btn-enviar">
+                    <input type="button" value="Enviar" class="btn-enviar" onclick="Cadastrar(event)">
                 </form>
             </div>
         </div>
     </main>
     <script src="../../mobile-navbar.js"></script>
+    <script src="../cadastrarAluno.js"></script>
 </body>
 
 </html>
