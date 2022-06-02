@@ -12,6 +12,9 @@
 .container_info {
     margin-top: 50px;
 }
+#menssagem {
+    margin-top: 8px;
+}
 
 @media only screen and (max-width: 764px) {
     .container_info h2 {
