@@ -14,23 +14,24 @@ function Cadastrar(event){
             "materia": materia,
             "nota": nota
         }
+        listaAlunos.push(aluno)
+        var obj = JSON.parse(localStorage.getItem('@aluno'))
+        if (obj === null){
+            localStorage.setItem('@aluno',JSON.stringify([aluno]))   
+        }else {
+            localStorage.setItem(
+                '@aluno',
+                // O JSON.parse transforma a string em JSON novamente, o inverso do JSON.strigify
+                JSON.stringify([
+                ...JSON.parse(localStorage.getItem('@aluno')),
+                aluno
+                ])
+            );
+        }
+        alert('Nota cadastrada com sucesso');
+        renderItem(aluno)
     }
-    listaAlunos.push(aluno)
-    var obj = JSON.parse(localStorage.getItem('@aluno'))
-    if (obj === null){
-        localStorage.setItem('@aluno',JSON.stringify([aluno]))   
-    }else {
-        localStorage.setItem(
-            '@aluno',
-            // O JSON.parse transforma a string em JSON novamente, o inverso do JSON.strigify
-            JSON.stringify([
-              ...JSON.parse(localStorage.getItem('@aluno')),
-              aluno
-            ])
-          );
-    }
-    alert('Nota cadastrada com sucesso');
-    renderItem(aluno)
+    
 }
 
 function renderItem(item) {
