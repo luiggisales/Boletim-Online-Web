@@ -1,0 +1,82 @@
+<script>
+    let alunosCadastrados = [];
+
+    function Cadastrar() {
+        let nome = prompt("Nome do aluno?");
+        let materia = prompt("Materia?")
+        let nota = parseInt(prompt("Nota?"))
+
+        if (nota <0 || nota > 10) {
+            alert("A nota é entre 0 e 10")
+        }
+
+        let aluno = {
+            nome: nome,
+            materia: materia,
+            nota:nota
+        }
+        alunosCadastrados.push(aluno)
+
+    }
+
+    function Listar() {
+        let mensagem = `Livros cadastrados: \n`;
+        let id = 0;
+        alunosCadastrados.forEach((item,index) => {
+            mensagem += `\n\tID: ${id+1}\n\tNome do aluno: ${item['nome']}\n\tMateria: ${item['materia']}\n\tNota: ${item['nota']}\n`;
+            id++;
+        });
+        alert(mensagem)
+    }
+
+    function Editar() {
+        Listar()
+        let id = parseInt(prompt("Qual o id do aluno a ser editado?"));
+        let aluno  = alunosCadastrados[id-1]
+        //                              Nome
+        let nome = prompt(`Nome do aluno? ${aluno['nome']}`);
+        if (nome != '') {
+            aluno['nome'] = nome;
+        }
+        //                              Materia
+        let materia = prompt(`Materia? ${aluno['materia']}`);
+        if (materia != '') {
+            aluno['materia'] = materia;
+        }
+        //                              Nota
+        let nota = parseInt(prompt(`Nota? ${aluno['nota']}`));
+        if (nota != '') {
+            aluno['nota'] = nota;
+        }
+
+        Listar()
+    }
+
+    function Apagar() {
+        Listar();
+        let id = parseInt(prompt("Qual id do aluno a ser excluido?"));
+        alunosCadastrados.splice(id-1,1);
+    }
+
+    
+    loop:
+        while (true) {
+            let opcao = prompt('[1] cadastrar nota\n[2] listar\n[3]editar\n[4]apagar\n[5] sair');
+            switch (opcao) {
+                case '1':
+                    Cadastrar();
+                    break;
+                case '2':
+                    Listar();
+                    break
+                case '3':
+                    Editar();
+                    break
+                case '4':
+                    Apagar();
+                    break
+                case '5':
+                    break loop;
+            }
+        }
+</script>
