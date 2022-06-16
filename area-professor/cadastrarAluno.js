@@ -116,12 +116,12 @@ function renderItem(item) {
     `
     buttonDelete.addEventListener("click",async function(){
         let new_listaalunos = []
-        let nome_or  = nome.innerHTML
-        const nome2 = nome_or.split('\t')//*Pega o nome da pessoa
+        let materia_or  = materia.innerHTML
+        const materia2 = materia_or.split('\t')//*Pega o matira da pessoa
         const data = await localStorage.getItem('@aluno')
         listaAlunos.push(data)
         JSON.parse(data).forEach((item)=>{
-            if (item.nomeAluno !== nome2[1]){
+            if (item.materia !== materia2[1]){
                 let aluno = {
                     "nomeAluno": item.nomeAluno,
                     "materia": item.materia,
@@ -129,12 +129,13 @@ function renderItem(item) {
                 }
                 new_listaalunos.push(aluno)
                 listaAlunos.pop();
+                localStorage.removeItem('@aluno');
             }
         })
         listaAlunos.push(new_listaalunos);
         localStorage.setItem('@aluno',JSON.stringify(listaAlunos[0]));
-        renderItem(item)
         window.location = window.location
+        renderItem(item)
     })
 
     container.appendChild(nome)
