@@ -1,39 +1,3 @@
-let listaAlunos = []
-
-function Cadastrar(event){
-    event.preventDefault();
-
-    var nomeAluno = document.getElementsByName('nomeAluno')[0].value;
-    var materia = document.getElementsByName('materia')[0].value;
-    var nota = document.getElementsByName('avParcial')[0].value;
-    if (nota >10){
-        alert('Notas somente de 0 a 10');
-    }else {
-        let aluno = {
-            "nomeAluno": nomeAluno,
-            "materia": materia,
-            "nota": nota
-        }
-        listaAlunos.push(aluno)
-        var obj = JSON.parse(localStorage.getItem('@aluno'))
-        if (obj === null){
-            localStorage.setItem('@aluno',JSON.stringify([aluno]))   
-        }else {
-            localStorage.setItem(
-                '@aluno',
-                // O JSON.parse transforma a string em JSON novamente, o inverso do JSON.strigify
-                JSON.stringify([
-                ...JSON.parse(localStorage.getItem('@aluno')),
-                aluno
-                ])
-            );
-        }
-        alert('Nota cadastrada com sucesso');
-        renderItem(aluno)
-    }
-    
-}
-
 function renderItem(item) {
     // Adicionando uma div com o item e a quantidade na div .items
     let container = document.querySelector('#container_info');
@@ -86,34 +50,6 @@ function renderItem(item) {
     box-shadow: 0px 4px 8px rgb(133, 130, 130);
     margin-bottom: 12px;`
 
-    buttonEdit.style.cssText = `
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 8px 8px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 8px;
-    margin-bottom: 5px;
-    cursor: pointer;
-    margin-right: 5px;
-    `
-
-    buttonDelete.style.cssText = `
-    background-color: #F44336; /* Red */
-    border: none;
-    color: white;
-    padding: 8px 8px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 8px;
-    margin-bottom: 5px;
-    cursor: pointer;
-    `
     buttonDelete.addEventListener("click",async function(){
         let new_listaalunos = []
         let nome_or  = nome.innerHTML
@@ -136,7 +72,7 @@ function renderItem(item) {
         renderItem(item)
         window.location = window.location
     })
-
+    
     container.appendChild(nome)
     container.appendChild(materia)
     container.appendChild(nota)

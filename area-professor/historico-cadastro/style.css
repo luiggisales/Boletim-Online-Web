@@ -8,7 +8,9 @@
     justify-content: center;
 }
 
-
+a { 
+    cursor: pointer;
+}
 .container_info {
     margin-top: 50px;
 }
