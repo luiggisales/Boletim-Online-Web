@@ -116,10 +116,11 @@ function renderItem(item) {
     buttonEdit.addEventListener("click",function(){
         let nome_aluno = nome.innerHTML
         let nome_get = nome_aluno.split('\t')
+
         const data = localStorage.getItem('@aluno')
         JSON.parse(data).forEach((item)=>{
             if (item.nomeAluno === nome_get[1]){
-                const aluno_nome = localStorage.setItem('nomeAluno',nome_get[1])
+                localStorage.setItem('nomeAluno',nome_get[1])
                 buttonEdit.href = '../editar-aluno/index.html';
             }
         })
@@ -128,11 +129,13 @@ function renderItem(item) {
     buttonDelete.addEventListener("click",async function(){
         let new_listaalunos = []
         let materia_or  = materia.innerHTML
+        let nome_or = nome.innerHTML
         const materia2 = materia_or.split('\t')//*Pega o matira da pessoa
+        const nome2 = nome_or.split('\t');
         const data = await localStorage.getItem('@aluno')
         listaAlunos.push(data)
         JSON.parse(data).forEach((item)=>{
-            if (item.materia !== materia2[1]){
+            if (item.materia !== materia2[1] || item.nomeAluno !== nome2[1]){
                 let aluno = {
                     "nomeAluno": item.nomeAluno,
                     "materia": item.materia,

@@ -43,6 +43,9 @@ async function Editar(event){
             new_listaalunos.push(aluno_edit)
             listaAlunos.pop();
             localStorage.removeItem('@aluno');
+        }else {
+            localStorage.removeItem('@aluno');
+            localStorage.setItem('@aluno',JSON.stringify(listaAlunos[0]));
         }
     });
     listaAlunos.push(new_listaalunos);
