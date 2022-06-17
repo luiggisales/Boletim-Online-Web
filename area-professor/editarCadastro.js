@@ -1,100 +1,53 @@
-function renderItem(item) {
-    // Adicionando uma div com o item e a quantidade na div .items
-    let container = document.querySelector('#container_info');
-    let nome = document.createElement('p');
-    let materia = document.createElement('p');
-    let nota = document.createElement('p');
-    let buttonEdit = document.createElement('a');
-    let buttonDelete = document.createElement('button');
+const data = localStorage.getItem('nomeAluno');
+let container = document.querySelector('#alunoNome')
+let nome_aluno = document.createElement('h3');
+nome_aluno.innerHTML = `Aluno a ser editado:  ${data}`
+nome_aluno.style.cssText =`
+color: #fff
+`
+container.appendChild(nome_aluno)
+let listaAlunos = []
 
-    nome.innerHTML = `Nome: \t${item.nomeAluno}`;
-    materia.innerHTML = `Materia: \t${item.materia}`
-    nota.innerHTML = `Nota: \t${item.nota}`
-    buttonDelete.innerHTML = 'Excluir'
-    buttonEdit.innerHTML = 'Editar'
-    buttonEdit.href = '../editar-aluno/index.html';
-
-    nome.style.cssText = `
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    margin-top: 8px;
-    padding: 1rem 1.5rem;
-    border-radius: 8px 8px 0px 0px;
-    max-height: 468px;
-    box-shadow: 0px 4px 8px rgb(133, 130, 130);;`
-
-    materia.style.cssText = `
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    max-height: 468px;
-    box-shadow: 0px 4px 8px rgb(133, 130, 130);`
-
-    nota.style.cssText = `
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    padding: 1rem 1.5rem;
-    border-radius: 0px 0px 8px 8px;
-    max-height: 468px;
-    box-shadow: 0px 4px 8px rgb(133, 130, 130);
-    margin-bottom: 12px;`
-
-    buttonDelete.addEventListener("click",async function(){
-        let new_listaalunos = []
-        let nome_or  = nome.innerHTML
-        const nome2 = nome_or.split('\t')//*Pega o nome da pessoa
-        const data = await localStorage.getItem('@aluno')
-        listaAlunos.push(data)
-        JSON.parse(data).forEach((item)=>{
-            if (item.nomeAluno !== nome2[1]){
-                let aluno = {
-                    "nomeAluno": item.nomeAluno,
-                    "materia": item.materia,
-                    "nota": item.nota
-                }
-                new_listaalunos.push(aluno)
-                listaAlunos.pop();
-            }
-        })
-        listaAlunos.push(new_listaalunos);
-        localStorage.setItem('@aluno',JSON.stringify(listaAlunos[0]));
-        renderItem(item)
-        window.location = window.location
-    })
+async function Cancelar(event){
+    event.preventDefault();
+    localStorage.removeItem('nomeAluno')
+    window.location.href = '../historico-cadastro/index.html';
+}
+async function Editar(event){
+    event.preventDefault();
     
-    container.appendChild(nome)
-    container.appendChild(materia)
-    container.appendChild(nota)
-    container.appendChild(buttonEdit)
-    container.appendChild(buttonDelete)
-}
+    var nomeAluno = document.getElementsByName('nomeAluno')[0].value;
+    var materia = document.getElementsByName('materia')[0].value;
+    var nota = document.getElementsByName('avParcial')[0].value;
 
-function getItems() {
-    // Pegando o array do localstorage
-
-    const items = JSON.parse(localStorage.getItem('@aluno'))
-    // Para cada item do array, é renderizado no html
-    items.forEach(item => {
-        if (JSON.stringify(item).length > 0) {
-            let menssagem = document.querySelector('#menssagem')
-            menssagem.innerHTML = ''
-        }else {
-            let menssagem = document.querySelector('#menssagem')
-            menssagem.innerHTML = 'Nenhuma item existente'
+    
+    if (!nomeAluno || !materia || !nota){
+        alert('Preencha todos os campos para continuar')
+    }
+    const store = localStorage.getItem('@aluno');
+    listaAlunos.push(store)
+    let new_listaalunos = []
+    JSON.parse(store).forEach((item) => {
+        if (item.nomeAluno !== data){
+            let aluno = {
+                "nomeAluno": item.nomeAluno,
+                "materia": item.materia,
+                "nota": item.nota
+            }
+            let aluno_edit = {
+                "nomeAluno": nomeAluno,
+                "materia": materia,
+                "nota": nota
+            }
+            new_listaalunos.push(aluno)
+            new_listaalunos.push(aluno_edit)
+            listaAlunos.pop();
+            localStorage.removeItem('@aluno');
         }
-        renderItem(item);
     });
+    listaAlunos.push(new_listaalunos);
+    localStorage.setItem('@aluno',JSON.stringify(listaAlunos[0]));
+    alert('Edição Realizada com Sucesso!')
+    localStorage.removeItem('nomeAluno')
+    window.location.href = '../historico-cadastro/index.html';
 }
-
-getItems();

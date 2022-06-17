@@ -27,9 +27,9 @@ function Cadastrar(event){
                 aluno
                 ])
             );
+            alert('Nota cadastrada com sucesso');
+            renderItem(aluno)
         }
-        alert('Nota cadastrada com sucesso');
-        renderItem(aluno)
     }
     
 }
@@ -48,7 +48,6 @@ function renderItem(item) {
     nota.innerHTML = `Nota: \t${item.nota}`
     buttonDelete.innerHTML = 'Excluir'
     buttonEdit.innerHTML = 'Editar'
-    buttonEdit.href = '../editar-aluno/index.html';
 
     nome.style.cssText = `
     background-color: #fff;
@@ -114,6 +113,18 @@ function renderItem(item) {
     margin-bottom: 5px;
     cursor: pointer;
     `
+    buttonEdit.addEventListener("click",function(){
+        let nome_aluno = nome.innerHTML
+        let nome_get = nome_aluno.split('\t')
+        const data = localStorage.getItem('@aluno')
+        JSON.parse(data).forEach((item)=>{
+            if (item.nomeAluno === nome_get[1]){
+                const aluno_nome = localStorage.setItem('nomeAluno',nome_get[1])
+                buttonEdit.href = '../editar-aluno/index.html';
+            }
+        })
+    })
+
     buttonDelete.addEventListener("click",async function(){
         let new_listaalunos = []
         let materia_or  = materia.innerHTML

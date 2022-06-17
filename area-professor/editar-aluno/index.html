@@ -41,7 +41,7 @@
                         </a>
                     </li>
                     <li class="nav-links nav-item">
-                        <a href="./index.html" class="nav-link">
+                        <a href="../historico-cadastro/index.html" class="nav-link">
                             <span class="text nav-text">Historico</span>
                         </a>
                     </li>
@@ -63,6 +63,7 @@
         <div class="container">
             <div class="card-form">
                 <form class="form" method="post" id="form">
+                    <div id="alunoNome"></div>
                     <div class="input-control">
                         <label for="nomeAluno">Nome do Aluno</label>
                         <input type="text" placeholder="Nome" name="nomeAluno">
@@ -93,11 +94,13 @@
                         <label for="avParcial">Nota da Avaliação Parcial</label>
                         <input type="text" placeholder="Nota" name="avParcial">
                     </div>
-                    <input type="button" value="Enviar" class="btn-enviar" onclick="Cadastrar(event)">
+                    <input type="button" value="Salvar Edição" class="btn-enviar" onclick="Editar(event)">
+                    <input type="button" value="Cancelar" class="btn-enviar" onclick="Cancelar(event)">
                 </form>
             </div>
         </div>
     </main>
     <script src="../editarCadastro.js"></script>
+    <script src="../../mobile-navbar.js"></script>
 </body>
 </html>
