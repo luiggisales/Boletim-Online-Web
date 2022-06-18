@@ -8,28 +8,27 @@ function Cadastrar(event){
     var nota = document.getElementsByName('avParcial')[0].value;
     if (nota >10){
         alert('Notas somente de 0 a 10');
+    }
+    let aluno = {
+        "nomeAluno": nomeAluno,
+        "materia": materia,
+        "nota": nota
+    }
+    listaAlunos.push(aluno)
+    var obj = JSON.parse(localStorage.getItem('@aluno'))
+    if (obj === null){
+        localStorage.setItem('@aluno',JSON.stringify([aluno]))   
     }else {
-        let aluno = {
-            "nomeAluno": nomeAluno,
-            "materia": materia,
-            "nota": nota
-        }
-        listaAlunos.push(aluno)
-        var obj = JSON.parse(localStorage.getItem('@aluno'))
-        if (obj === null){
-            localStorage.setItem('@aluno',JSON.stringify([aluno]))   
-        }else {
-            localStorage.setItem(
-                '@aluno',
-                // O JSON.parse transforma a string em JSON novamente, o inverso do JSON.strigify
-                JSON.stringify([
-                ...JSON.parse(localStorage.getItem('@aluno')),
-                aluno
-                ])
-            );
-            alert('Nota cadastrada com sucesso');
-            renderItem(aluno)
-        }
+        localStorage.setItem(
+            '@aluno',
+            // O JSON.parse transforma a string em JSON novamente, o inverso do JSON.strigify
+            JSON.stringify([
+            ...JSON.parse(localStorage.getItem('@aluno')),
+            aluno
+            ])
+        );
+        alert('Nota cadastrada com sucesso');
+        renderItem(aluno)
     }
     
 }
@@ -116,11 +115,14 @@ function renderItem(item) {
     buttonEdit.addEventListener("click",function(){
         let nome_aluno = nome.innerHTML
         let nome_get = nome_aluno.split('\t')
+        let materia_aluno = materia.innerHTML
+        let materia_get = materia_aluno.split('\t')
 
         const data = localStorage.getItem('@aluno')
         JSON.parse(data).forEach((item)=>{
             if (item.nomeAluno === nome_get[1]){
                 localStorage.setItem('nomeAluno',nome_get[1])
+                localStorage.setItem('materia',materia_get[1])
                 buttonEdit.href = '../editar-aluno/index.html';
             }
         })
