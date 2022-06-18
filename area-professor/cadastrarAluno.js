@@ -1,6 +1,4 @@
-let listaAlunos = []
-
-function Cadastrar(event){
+async function Cadastrar(event){
     event.preventDefault();
 
     var nomeAluno = document.getElementsByName('nomeAluno')[0].value;
@@ -14,26 +12,24 @@ function Cadastrar(event){
         "materia": materia,
         "nota": nota
     }
-    listaAlunos.push(aluno)
     var obj = JSON.parse(localStorage.getItem('@aluno'))
-    if (obj === null){
+    if (!obj){
         localStorage.setItem('@aluno',JSON.stringify([aluno]))   
-    }else {
-        localStorage.setItem(
-            '@aluno',
-            // O JSON.parse transforma a string em JSON novamente, o inverso do JSON.strigify
-            JSON.stringify([
-            ...JSON.parse(localStorage.getItem('@aluno')),
-            aluno
-            ])
-        );
-        alert('Nota cadastrada com sucesso');
-        renderItem(aluno)
     }
+    await localStorage.setItem(
+        '@aluno',
+        // O JSON.parse transforma a string em JSON novamente, o inverso do JSON.strigify
+        JSON.stringify([
+        ...JSON.parse(await localStorage.getItem('@aluno')),
+        aluno
+        ])
+    );
+    alert('Nota cadastrada com sucesso');
+    renderItem(aluno)
     
 }
 
-function renderItem(item) {
+async function renderItem(item) {
     // Adicionando uma div com o item e a quantidade na div .items
     let container = document.querySelector('#container_info');
     let nome = document.createElement('p');
@@ -135,8 +131,7 @@ function renderItem(item) {
         const materia2 = materia_or.split('\t')//*Pega o matira da pessoa
         const nome2 = nome_or.split('\t');
         const data = await localStorage.getItem('@aluno')
-        listaAlunos.push(data)
-        JSON.parse(data).forEach((item)=>{
+        JSON.parse(data).forEach(async(item)=>{
             if (item.materia !== materia2[1] || item.nomeAluno !== nome2[1]){
                 let aluno = {
                     "nomeAluno": item.nomeAluno,
@@ -144,12 +139,10 @@ function renderItem(item) {
                     "nota": item.nota
                 }
                 new_listaalunos.push(aluno)
-                listaAlunos.pop();
-                localStorage.removeItem('@aluno');
+                await localStorage.removeItem('@aluno');
             }
         })
-        listaAlunos.push(new_listaalunos);
-        localStorage.setItem('@aluno',JSON.stringify(listaAlunos[0]));
+        await localStorage.setItem('@aluno',[JSON.stringify([...new_listaalunos])]);
         window.location = window.location
         renderItem(item)
     })
